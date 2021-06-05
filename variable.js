@@ -7,7 +7,7 @@
 
 console.log("Hello, World");
 
-// 2. Variable
+// 2. Variable, rw(read/write)
 // let (added in ES6)
 let globalNaming = 'global naming';
 
@@ -30,8 +30,14 @@ var age;
 console.log(age);
 
 
-//3. Constants
-// favor immutable data types always for a few reasons:
+//3. Constant, r(read only)
+// use const whenver possible
+// only use let if variable needs to change 
+
+// NOTE!
+// Immutable data types : premitive types, frozen objects (i.e object.freeze())
+// Mutable data types : all objects by default are mutable in JS
+// favor immutable data types always for a few reasons :
 // - security : 한번 작성한 값을 해커들이 코드를 이상한거 삽입해서 값을 계석 변경해 나가는 것이 가능한데 immutable data는 이것을 방지한다.
 // - thread safety : 어플리케이션이 실행되면 한가지 프로세스가 할당이 되고 그 프로세스 안에서는 다양한 쓰레드가 동시에 돌아가면서 어플리케이션을 조금 더 효율적으로 빠르게 동작할 수 있도록 도와주는데, 다양한 쓰레드들이 동시에 변수에 접근해서 값을 변경할 수가 있는데 이 동시에 값을 변경한다는 것은 위험한 생각이다. 그래서 가능하면 immutable data를 사용하는 것이 좋다. 
 // - reduce human mistakes
@@ -39,8 +45,13 @@ const daysInWeek = 7;
 const maxNumber = 5;
 
 
+
 // 4. Variable Types
 // 어떤 프로그래밍 언어도 primitive type과 object type으로 나눠져 있다.
+// 메모리에 값이 저장되는 방법은 2가지인데 primitive type과 object type 에 따라서 메모리에 값이 다른 방식으로 저장된다. primitive type은 value, 즉 값 자체가 메모리에 저장이 된다. 반면 object는 너무 커서 메모리에 한번에 다 올라 갈수가 없다. 따라서 const yez = {}; 오브젝트를 할당하게 되면 yez가 가리키는 곳에는 레퍼런스, 참조값이 있다. 이 레퍼런스는 실제로 오브젝트를 가리키고 있는 곳이다. 이 레퍼런스를 통해서 실제로 오브젝트가 담겨있는 메모리를 가리키는 것이다. 따라서 const 타입일 때, 오브젝트 이름 자체는 못바꾸지만 오브젝트 안에있는 애들은 바꿀수 있는거.
+
+// 따라서 primitive type은 value로 값이 저장되고, object type은 오브젝트를 가리키는 레퍼런스가 메모리에 저장된다. 
+
 // primitive type, single item : number, string, boolean, null, undefined, symbol
 // object, box-container
 // function, first-class function(자바스크립트에선 function도 데이터 타입중 하나이다. function도 다른 데이터 타입처럼 변수에 할당이 가능하고 또 그렇기 때문에 함수에 파라미터 인자로도 전달이 되고 서 함수에서 리턴타입으로도 function을 리턴할 수 있다. 이걸 first-class function이라고 부른다.)
