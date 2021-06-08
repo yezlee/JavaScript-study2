@@ -1,10 +1,10 @@
 // Function 
-// - fundmental building in the program
+// - fundamental building in the program
 // - subprogram can be used multiple times
 // - performs a task or calculates a value
 
 // 1. Function declaration
-// function mame(param1, param2) { body... return;}
+// function name(param1, param2) { body... return;}
 // one function === one thing
 // naming  : doSomething, command, verb
 // e.g createCardAndPoint -> createCard, createPoint 만약 함수이름을 짓는게 너무 어렵다면, 이 함수에서 하는일이 너무 많은게 아닌지 다시한번 봐야한다. 
@@ -238,3 +238,26 @@ calculate(substract, 3, 5);
 calculate(divide, 3, 5);
 calculate(multify, 3, 5);
 calculate(remainder, 3, 5);
+
+
+
+
+// 스위치문을 사용해서하면 좀 더 간단하게 할수 있다.
+function calculate2(command, a, b){
+    switch(command){
+        case 'add' :
+            return a+b;
+        case 'substract' : 
+            return a-b;
+        case 'divide' : 
+            return a/b;
+        case 'multiply' : 
+            return a*b;
+        case 'remainder' : 
+            return a%b;
+        default :
+            throw Error('unknown command');
+    }
+}
+
+console.log(calculate2('add', 3, 5));
