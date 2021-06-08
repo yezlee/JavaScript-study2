@@ -20,7 +20,7 @@ printHello();
 function log(message){
     console.log(message);
 }
-log('Hello~!')
+log('Hello~!');
 
 // +자바스크립트에는 타입이 없기 때문에, 아쉽게도 함수 자체의 인터페이스만 보았을 때, 이 message가 문자열을 전달해야하는지 숫자를 전달해야 하는지 알 수가 없다.
 
@@ -32,7 +32,10 @@ function changeName(obj){
     obj.name = 'coder';
 }
 
-const yez = {name : 'yez'}; // 이렇게 yez라는 const를 정의한 다음에, 오브젝트를 만들어서 할당해주면, 메모리에는 오브젝트가 만들어진 reference가 메모리에 들어가게 되고, reference는 바로 이 오브젝트(which is {name : 'yez'} )를 메모리 어딘가에 가리키고 있다.
+const yez = {name : 'yez'}; 
+console.log(`yez : ${yez}`); 
+console.log(yez); 
+// 이렇게 yez라는 const를 정의한 다음에, 오브젝트를 만들어서 할당해주면, 메모리에는 오브젝트가 만들어진 reference가 메모리에 들어가게 되고, reference는 바로 이 오브젝트(which is {name : 'yez'} )를 메모리 어딘가에 가리키고 있다.
 changeName(yez);
 console.log(yez); // coder ==> 오브젝트는 레퍼런스로 전달되기 때문에 함수안에서 오브젝트의 값을 변경하게 되면 그 변경된 사항이 그대로 메모리에 적용이 되기 때문에 추후에 변경된 사항을 확인할 수가 있다. 
 
@@ -86,8 +89,8 @@ function printMessage() {
     console.log(globalMessage); // global variable
 
     function printAnother(){
-        console.log(message); 
-        let childMessage = 'hello'; // 이렇게 중첩된 함수에서 자식의 함수가 부모 함수에 정의된 변수에 접근이 가능한것들이 closure.
+        console.log(message); // 이렇게 중첩된 함수에서 자식의 함수가 부모 함수에 정의된 변수에 접근이 가능한것들이 closure.
+        let childMessage = 'hello'; 
     }
     // console.log(childMessage);  이건 에러.
     // return undefined; // 이렇게 리턴타입이 없는건 undefined를 리턴하는 것과 똑같다. 

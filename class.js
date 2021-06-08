@@ -142,13 +142,13 @@ console.log(experiment.privateFiled); // undefined
 // 4. Static properties and methods
 // Too soon as well!
 class Article {
-    static puclisher = 'Dream Coding';
+    static publisher = 'Dream Coding';
     constructor(articleNumber) {
         this.articleNumber = articleNumber;
     }
 
     static printPublisher(){
-        console.log(Article.puclisher);
+        console.log(Article.publisher);
     }
 }
 
@@ -157,10 +157,10 @@ class Article {
 
 const article1 = new Article(1);
 const article2 = new Article(2);
-// console.log(article1.puclisher); // undefined
+// console.log(article1.publisher); // undefined
 // 원래 위 처럼 사용하면 잘 나오는데 위에 static을 이용해서 publisher를 정의해서 undefined가 뜨는것. 
 
-console.log(Article.puclisher); // Dream Coding
+console.log(Article.publisher); // Dream Coding
 // 이렇게 하면 된다. 왜냐, 스태틱은 오브젝트마다 할당되어 지는 것이 아니고 클래스 자체, 즉 Article라는 클래스 자체에 붙어있기 때문에 그렇다. 위처럼 하면 Dream Coding 이라고 값이 잘 나온다.
 
 Article.printPublisher(); // Dream Coding
