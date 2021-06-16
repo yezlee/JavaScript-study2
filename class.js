@@ -9,8 +9,8 @@
 
 // 1. Class declarations
 class Person{
-    // constructor
-    constructor(name, age){
+    // constructor - 이 생성자를 이용해서 우리가 나중에 오브젝트를 만들때 필요한 데이터를 전달한다. 그래서 전달받은 데이터를 이 클래스에 존재하는 fields에 우리가 전달해준 데이터를 바로 할당해 주는 것이다. 
+    constructor(name, age){ 
         //fields
         this.name = name;
         this.age = age;
