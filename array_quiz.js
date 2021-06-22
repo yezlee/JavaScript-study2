@@ -181,7 +181,7 @@ const students = [
 {
   const result = students
     .map((student) => student.score)
-    .sort((a, b) => b - a)
+    .sort((a, b) => a - b) // descending :  .sort((a, b) => b - a)
     .join();
   console.log(result);
 }
